@@ -39,8 +39,8 @@ public class EnumMapperTest {
 			// Conversion from Enum to Integer and String
 			Direction myDirection = Direction.NORTH;
 			
-			assertEquals(myDirection.id(), new Integer(1));
-			assertEquals(myDirection.text(), "this is north");
+			assertEquals(myDirection.asInteger(), new Integer(1));
+			assertEquals(myDirection.asString(), "this is north");
 
 	}
 
@@ -50,8 +50,8 @@ public class EnumMapperTest {
 		    Integer id = 55;
 			Direction myDirection = directionEnumMap.fromInteger(id);
 			
-			assertEquals(myDirection.id(), new Integer(id));
-			assertEquals(myDirection.text(), "this is east");
+			assertEquals(myDirection.asInteger(), new Integer(id));
+			assertEquals(myDirection.asString(), "this is east");
 			assertEquals(myDirection, Direction.EAST);
 	}
 	
@@ -61,8 +61,8 @@ public class EnumMapperTest {
 			String eastString = new String("this is south");
 			Direction myDirection = directionEnumMap.fromString(eastString);
 
-			assertEquals(myDirection.id(), new Integer(2));
-			assertEquals(myDirection.text(), "this is south");
+			assertEquals(myDirection.asInteger(), new Integer(2));
+			assertEquals(myDirection.asString(), "this is south");
 			assertEquals(myDirection, Direction.SOUTH);
 	}
 	

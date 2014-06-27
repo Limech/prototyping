@@ -14,8 +14,8 @@ public class EnumMapper<T extends IEnum> {
 	  
 	   for (T e : t)
 	   {
-		   intToTypeMap.put(e.id(), e);
-		   stringToTypeMap.put(e.text(), e);
+		   intToTypeMap.put(e.asInteger(), e);
+		   stringToTypeMap.put(e.asString(), e);
 	   }
 	  
    }

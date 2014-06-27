@@ -6,15 +6,14 @@ public enum Direction implements IEnum {
 	  EAST (55, "this is east"),
 	  WEST (22, "this is west");
 
-	private final Integer id;
-	private final String text;
-
 	private Direction(Integer id, String text ) {
 		this.id = id;
 		this.text = text;
 	}
-
-	public Integer id() { return id;}
-	public String text() { return text;}
+	
+	private final Integer id;
+	private final String text;
+	public Integer asInteger() { return id;}
+	public String asString() { return text;}
 }
 	
