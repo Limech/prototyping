@@ -22,26 +22,34 @@ class Weekday extends EnumValue<Weekday, Weekday.e> implements IEnum
 		put(e.SUN, 7, "Sunday");
 	}
 
+	/**
+	 * 
+	 */
 	public Weekday() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
+	/**
+	 * @param value
+	 */
 	public Weekday(e value) {
 		super(value);
-		// TODO Auto-generated constructor stub
 	}
 
+	/**
+	 * @param id
+	 */
 	public Weekday(Integer id) {
 		super(id);
-		// TODO Auto-generated constructor stub
 	}
 
+	/**
+	 * @param text
+	 */
 	public Weekday(String text) {
 		super(text);
-		// TODO Auto-generated constructor stub
 	}
-	
+
 	
 
 }

@@ -18,22 +18,18 @@ class Direction extends EnumValue<Direction, Direction.e> implements IEnum
 
 	public Direction() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public Direction(e value) {
 		super(value);
-		// TODO Auto-generated constructor stub
 	}
 
 	public Direction(Integer id) {
 		super(id);
-		// TODO Auto-generated constructor stub
 	}
 
 	public Direction(String text) {
 		super(text);
-		// TODO Auto-generated constructor stub
 	}
 	
 	
