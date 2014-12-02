@@ -1,5 +1,5 @@
 
-class Direction extends EnumValue<Direction, Direction.e> implements IEnum
+class Direction extends EnumValue<Direction.e>
 {
 	public enum e {
 		  NORTH,

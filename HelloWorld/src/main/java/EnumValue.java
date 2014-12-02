@@ -2,7 +2,7 @@
 import com.google.common.collect.BiMap;
 import com.google.common.collect.HashBiMap;
 
-public abstract class EnumValue<T extends IEnum, Y extends Enum<Y>> {
+public abstract class EnumValue<Y extends Enum<Y>> {
 
 	private Y value;
 	private Integer intValue;

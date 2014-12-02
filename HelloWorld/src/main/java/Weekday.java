@@ -1,5 +1,5 @@
 
-class Weekday extends EnumValue<Weekday, Weekday.e> implements IEnum
+class Weekday extends EnumValue<Weekday.e>
 {
 	public enum e {
 		  MON,
