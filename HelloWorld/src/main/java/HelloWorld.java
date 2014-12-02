@@ -18,6 +18,7 @@ public class HelloWorld {
 			
 			// Conversion from Enum to Integer and String
 			Direction myDirection = new Direction(Direction.e.NORTH);
+				
 			System.out.println(myDirection.id());
 			System.out.println(myDirection.text());
 			

@@ -22,12 +22,6 @@ class Weekday extends EnumValue<Weekday.e>
 		put(e.SUN, 7, "Sunday");
 	}
 
-	/**
-	 * 
-	 */
-	public Weekday() {
-		super();
-	}
 
 	/**
 	 * @param value

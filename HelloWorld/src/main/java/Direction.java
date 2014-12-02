@@ -16,10 +16,6 @@ class Direction extends EnumValue<Direction.e>
 	    put(e.WEST, 45, "this is west");
 	}
 
-	public Direction() {
-		super();
-	}
-
 	public Direction(e value) {
 		super(value);
 	}

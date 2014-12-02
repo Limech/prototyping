@@ -12,16 +12,14 @@ public abstract class EnumValue<Y extends Enum<Y>> {
 	private final BiMap<Y, String> stringToTypeMap =  HashBiMap.create();
 	
 	abstract protected void addEntries();
-	
-	EnumValue() { 
-		addEntries();
-	}
-	
+		
 	EnumValue(Y value) { 
 		this.value = value;
 		addEntries();
 		this.intValue = intToTypeMap.get(value);
 		this.stringValue = stringToTypeMap.get(value);
+		
+		// Since we constructed with an enum value, this is valid.
 		isValid = true;
 
 	}
