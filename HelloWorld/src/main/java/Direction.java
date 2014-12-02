@@ -8,25 +8,34 @@ class Direction extends EnumValue<Direction, Direction.e> implements IEnum
 		  WEST;
 	}
 	
-	private void addEntries()
+	protected void addEntries()
 	{
 		put(e.NORTH, 1, "this is north");
 	    put(e.SOUTH, 2, "this is south");
 	    put(e.EAST, 55, "this is east");
 	    put(e.WEST, 45, "this is west");
 	}
-	
-	Direction()
-	{
+
+	public Direction() {
 		super();
-		addEntries();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Direction(e value) {
+		super(value);
+		// TODO Auto-generated constructor stub
+	}
+
+	public Direction(Integer id) {
+		super(id);
+		// TODO Auto-generated constructor stub
+	}
+
+	public Direction(String text) {
+		super(text);
+		// TODO Auto-generated constructor stub
 	}
 	
-	Direction(e value)
-	{ 
-		super(value);
-		addEntries();
-	}
 	
 }
 	

@@ -5,46 +5,33 @@ public class HelloWorld {
 	{
 	
 		try {
+					
 			
-			//EnumMap<SomeClass> doesNotCompile;
+			for (Direction.e dir : Direction.e.values()) {
+				Direction myDirection = new Direction(dir);
+				System.out.println(myDirection.id());
+				System.out.println(myDirection.text());
+				System.out.println(myDirection.value().toString());
+				System.out.println("\n");
+			}
+			System.out.println("\n\n\n");
 			
-						
 			// Conversion from Enum to Integer and String
 			Direction myDirection = new Direction(Direction.e.NORTH);
 			System.out.println(myDirection.id());
 			System.out.println(myDirection.text());
 			
 			// Conversion from Integer to Enum
-	        Integer id = 55;
-			Direction newDirection = new Direction(myDirection.fromInteger(id));
-			System.out.println(newDirection);
-			
-			System.out.println(newDirection.id());
+			Direction newDirection = new Direction(55);
 			System.out.println(newDirection.text());
+			System.out.println(newDirection.id());
+			System.out.println(newDirection.toString());
 			
 			// Conversion from String to Enum
-			String eastString = new String("this is south");
-			Direction textDirection = new Direction(myDirection.fromString(eastString));
-		    System.out.println(textDirection);
-		    
+			Direction textDirection = new Direction("this is south");		    
 			System.out.println(textDirection.id());
 			System.out.println(textDirection.text());
 			
-			// Bad integer to Enum
-			Integer badId = 5235;
-			Direction badDirection =  new Direction(myDirection.fromInteger(badId));
-			
-			if (badDirection == null) {System.out.println("Bad direction"); }
-		    System.out.println(badDirection);
-		    
-		    // Bad integer to Enum
-		    String badString = "this is sparta";
-		 	Direction badDirection2 = new Direction(myDirection.fromString(badString));
-		 			
-		 	if (badDirection2 == null) {System.out.println("Bad direction"); }
-		 	System.out.println(badDirection2);
-			 
-			 
 			
 			 
 			 

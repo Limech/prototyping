@@ -11,7 +11,7 @@ class Weekday extends EnumValue<Weekday, Weekday.e> implements IEnum
 		  SUN;
 	}
 	
-	private void addEntries()
+	protected void addEntries()
 	{
 		put(e.MON, 1, "Monday");
 		put(e.TUE, 2, "Tuesday");
@@ -20,20 +20,29 @@ class Weekday extends EnumValue<Weekday, Weekday.e> implements IEnum
 		put(e.FRI, 5, "Friday");
 		put(e.SAT, 6, "Saturday");
 		put(e.SUN, 7, "Sunday");
-		
 	}
-	
-	Weekday()
-	{
+
+	public Weekday() {
 		super();
-		addEntries();
+		// TODO Auto-generated constructor stub
 	}
-	
-	Weekday(e value)
-	{ 
+
+	public Weekday(e value) {
 		super(value);
-		addEntries();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Weekday(Integer id) {
+		super(id);
+		// TODO Auto-generated constructor stub
+	}
+
+	public Weekday(String text) {
+		super(text);
+		// TODO Auto-generated constructor stub
 	}
 	
+	
+
 }
 	

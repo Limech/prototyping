@@ -21,31 +21,34 @@ public class EnumMapperTest {
 			
 			assertEquals(myDirection.id(), new Integer(1));
 			assertEquals(myDirection.text(), "this is north");
+			assertEquals(myDirection.value(), Direction.e.NORTH);
+			assertEquals(myDirection.isValid(), true);
+		
 
 	}
 
 	@Test
 	public void GivenIntegerConvertToEnum()  {
 			// Conversion from Integer to Enum
-		    Integer id = 55;
-			Direction myDirection = new Direction(Direction.e.EAST);			
-			myDirection= new Direction(myDirection.fromInteger(id));
+		    Integer id = 55;		
+			Direction myDirection= new Direction(id);
 	
 			assertEquals(myDirection.id(), new Integer(id));
 			assertEquals(myDirection.text(), "this is east");
 			assertEquals(myDirection.value(), Direction.e.EAST);
+			assertEquals(myDirection.isValid(), true);
 	}
 	
 	@Test
 	public void GivenStringConvertToEnum()  {
 			// Conversion from String to Enum
 			String eastString = new String("this is south");
-			Direction myDirection = new Direction(Direction.e.EAST);	
-			myDirection = new Direction(myDirection.fromString(eastString));
+			Direction myDirection = new Direction(eastString);
 
 			assertEquals(myDirection.id(), new Integer(2));
 			assertEquals(myDirection.text(), "this is south");
 			assertEquals(myDirection.value(), Direction.e.SOUTH);
+			assertEquals(myDirection.isValid(), true);
 	}
 	
 	@Test
@@ -53,10 +56,12 @@ public class EnumMapperTest {
 		
 			// Bad integer to Enum
 			Integer badId = 5235;
-			Direction myDirection = new Direction(Direction.e.EAST);	
-			myDirection = new Direction(myDirection.fromInteger(badId));
+			Direction myDirection = new Direction(badId);
 			
 			assertNull(myDirection.value());
+			assertEquals(myDirection.id(), new Integer(badId));
+			assertEquals(myDirection.text(), "Invalid");
+			assertEquals(myDirection.isValid(), false);
 
 	}
 	
@@ -64,9 +69,11 @@ public class EnumMapperTest {
 	public void GivenBadStringConvertToEnum()  {
 		    // Bad integer to Enum
 		    String badString = "this is sparta";
-		    Direction myDirection = new Direction(Direction.e.EAST);	
-		 	 myDirection = new Direction(myDirection.fromString(badString));
-		 			
+		    Direction myDirection = new Direction(badString);
+		    
+		    assertEquals(myDirection.isValid(), false);
+		    assertEquals(myDirection.id(), new Integer(0));
+			assertEquals(myDirection.text(), badString);	
 		 	assertNull(myDirection.value());
 
 		
