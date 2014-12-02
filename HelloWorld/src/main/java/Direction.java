@@ -1,19 +1,32 @@
 
-//@EnumAnnotation
-public enum Direction implements IEnum {
-	  NORTH (1, "this is north"),
-	  SOUTH (2, "this is south"),
-	  EAST (55, "this is east"),
-	  WEST (22, "this is west");
-
-	private Direction(Integer id, String text ) {
-		this.id = id;
-		this.text = text;
+class Direction extends EnumValue<Direction, Direction.e> implements IEnum
+{
+	public enum e {
+		  NORTH,
+		  SOUTH,
+		  EAST,
+		  WEST;
 	}
 	
-	private final Integer id;
-	private final String text;
-	public Integer asInteger() { return id;}
-	public String asString() { return text;}
+	private void addEntries()
+	{
+		put(e.NORTH, 1, "this is north");
+	    put(e.SOUTH, 2, "this is south");
+	    put(e.EAST, 55, "this is east");
+	    put(e.WEST, 45, "this is west");
+	}
+	
+	Direction()
+	{
+		super();
+		addEntries();
+	}
+	
+	Direction(e value)
+	{ 
+		super(value);
+		addEntries();
+	}
+	
 }
 	

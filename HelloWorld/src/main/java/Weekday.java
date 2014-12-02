@@ -1,22 +1,39 @@
 
-public enum Weekday implements IEnum {
-	  MON (1, "Monday"),
-	  TUE (2, "Tuesday"),
-	  WED (3, "Wednesday"),
-	  THU (4, "Thursday"),
-	  FRI (5, "Friday"),
-	  SAT (6, "Saturday"),
-	  SUN (7, "Sunday");
-
-
-
-	private Weekday(Integer id, String text ) {
-		this.id = id;
-		this.text = text;
+class Weekday extends EnumValue<Weekday, Weekday.e> implements IEnum
+{
+	public enum e {
+		  MON,
+		  TUE,
+		  WED,
+		  THU,
+		  FRI,
+		  SAT,
+		  SUN;
 	}
 	
-	private  Integer id;
-	private  String text;
-	public Integer asInteger() { return id;}
-	public String asString() { return text;}
+	private void addEntries()
+	{
+		put(e.MON, 1, "Monday");
+		put(e.TUE, 2, "Tuesday");
+		put(e.WED, 3, "Wednesday");
+		put(e.THU, 4, "Thursday");
+		put(e.FRI, 5, "Friday");
+		put(e.SAT, 6, "Saturday");
+		put(e.SUN, 7, "Sunday");
+		
+	}
+	
+	Weekday()
+	{
+		super();
+		addEntries();
+	}
+	
+	Weekday(e value)
+	{ 
+		super(value);
+		addEntries();
+	}
+	
 }
+	
