@@ -1,6 +1,16 @@
+import enumUtils.EnumValue;
+import enumUtils.IsEnumValue;
 
+
+
+@IsEnumValue
 class Direction extends EnumValue<Direction.e>
 {
+	Direction(EnumBuilder<Direction.e> builder) {
+		super(builder);
+		// TODO Auto-generated constructor stub
+	}
+
 	public enum e {
 		  NORTH,
 		  SOUTH,
@@ -15,19 +25,6 @@ class Direction extends EnumValue<Direction.e>
 	    put(e.EAST, 55, "this is east");
 	    put(e.WEST, 45, "this is west");
 	}
-
-	public Direction(e value) {
-		super(value);
-	}
-
-	public Direction(Integer id) {
-		super(id);
-	}
-
-	public Direction(String text) {
-		super(text);
-	}
-	
 	
 }
 	

@@ -1,14 +1,23 @@
 
+
+/*
+public enum Weekday extends EnumValue<Weekday.e> 
+{
+      MON(EnumValue("Monday").),
+	  TUE,
+	  WED,
+	  THU,
+	  FRI,
+	  SAT,
+	  SUN;
+   }
+}
+
+
 class Weekday extends EnumValue<Weekday.e>
 {
 	public enum e {
-		  MON,
-		  TUE,
-		  WED,
-		  THU,
-		  FRI,
-		  SAT,
-		  SUN;
+
 	}
 	
 	protected void addEntries()
@@ -23,23 +32,17 @@ class Weekday extends EnumValue<Weekday.e>
 	}
 
 
-	/**
-	 * @param value
-	 */
+
 	public Weekday(e value) {
 		super(value);
 	}
 
-	/**
-	 * @param id
-	 */
+
 	public Weekday(Integer id) {
 		super(id);
 	}
 
-	/**
-	 * @param text
-	 */
+
 	public Weekday(String text) {
 		super(text);
 	}
@@ -47,4 +50,5 @@ class Weekday extends EnumValue<Weekday.e>
 	
 
 }
+*/
 	

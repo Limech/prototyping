@@ -6,7 +6,7 @@ public class HelloWorld {
 	
 		try {
 					
-			
+		/*	
 			for (Direction.e dir : Direction.e.values()) {
 				Direction myDirection = new Direction(dir);
 				System.out.println(myDirection.id());
@@ -35,7 +35,7 @@ public class HelloWorld {
 			
 			
 			 
-			 
+*/			 
 			
 		} catch (IllegalArgumentException e) {
 			// TODO Auto-generated catch block

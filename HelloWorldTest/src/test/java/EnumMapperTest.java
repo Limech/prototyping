@@ -6,6 +6,9 @@ import org.junit.Before;
 import org.junit.Test;
 
 
+import enumUtils.EnumValue;
+import enumUtils.EnumValue.EnumBuilder;
+
 public class EnumMapperTest {
 		
 	@Before
@@ -15,9 +18,11 @@ public class EnumMapperTest {
 
 	@Test
 	public void GivenGoodEnum()  {
-		
+
+		//EnumValue.EnumBuilder<Direction.e>()
 			// Conversion from Enum to Integer and String
-			Direction myDirection = new Direction(Direction.e.NORTH);
+		  
+		    Direction myDirection = new Direction(new EnumValue.EnumBuilder<Direction.e>().enumVal(Direction.e.NORTH));
 			
 			assertEquals(myDirection.id(), new Integer(1));
 			assertEquals(myDirection.text(), "this is north");
@@ -31,7 +36,8 @@ public class EnumMapperTest {
 	public void GivenIntegerConvertToEnum()  {
 			// Conversion from Integer to Enum
 		    Integer id = 55;		
-			Direction myDirection= new Direction(id);
+			//Direction myDirection= new Direction(id);
+			Direction myDirection = new Direction(new EnumValue.EnumBuilder<Direction.e>().intVal(id));
 	
 			assertEquals(myDirection.id(), new Integer(id));
 			assertEquals(myDirection.text(), "this is east");
@@ -43,7 +49,8 @@ public class EnumMapperTest {
 	public void GivenStringConvertToEnum()  {
 			// Conversion from String to Enum
 			String eastString = new String("this is south");
-			Direction myDirection = new Direction(eastString);
+			//Direction myDirection = new Direction(eastString);
+			Direction myDirection = new Direction(new EnumValue.EnumBuilder<Direction.e>().stringVal(eastString));
 
 			assertEquals(myDirection.id(), new Integer(2));
 			assertEquals(myDirection.text(), "this is south");
@@ -56,7 +63,8 @@ public class EnumMapperTest {
 		
 			// Bad integer to Enum
 			Integer badId = 5235;
-			Direction myDirection = new Direction(badId);
+			//Direction myDirection = new Direction(badId);
+			Direction myDirection = new Direction(new EnumValue.EnumBuilder<Direction.e>().intVal(badId));
 			
 			assertNull(myDirection.value());
 			assertEquals(myDirection.id(), new Integer(badId));
@@ -69,7 +77,8 @@ public class EnumMapperTest {
 	public void GivenBadStringConvertToEnum()  {
 		    // Bad integer to Enum
 		    String badString = "this is sparta";
-		    Direction myDirection = new Direction(badString);
+		    //Direction myDirection = new Direction(badString);
+		    Direction myDirection = new Direction(new EnumValue.EnumBuilder<Direction.e>().stringVal(badString));
 		    
 		    assertEquals(myDirection.isValid(), false);
 		    assertEquals(myDirection.id(), new Integer(0));
