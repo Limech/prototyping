@@ -15,9 +15,8 @@ public abstract class EnumValue<Y extends Enum<Y>> {
 	abstract protected void addEntries();
 		
 	protected EnumValue(EnumBuilder<Y> builder) { 
-		
+		addEntries();
 		if (builder.enumVal != null) {
-			addEntries();
 			this.value = builder.enumVal;
 			this.intValue = intToTypeMap.get(builder.enumVal);
 			this.stringValue = stringToTypeMap.get(builder.enumVal);
@@ -32,8 +31,7 @@ public abstract class EnumValue<Y extends Enum<Y>> {
 	}
 	
 	private void setInt(Integer id) {
-		addEntries();
-		this.value = fromInteger(id);
+	    this.value = fromInteger(id);
 		this.intValue = id;
 		if (this.value != null)
 		{
@@ -47,7 +45,6 @@ public abstract class EnumValue<Y extends Enum<Y>> {
 	}
 	
 	private void setString(String text) {
-		addEntries();
 		this.value = fromString(text);
 		this.stringValue = text;
 		if (this.value != null) { 

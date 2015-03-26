@@ -8,7 +8,6 @@ class Direction extends EnumValue<Direction.e>
 {
 	Direction(EnumBuilder<Direction.e> builder) {
 		super(builder);
-		// TODO Auto-generated constructor stub
 	}
 
 	public enum e {
@@ -18,6 +17,7 @@ class Direction extends EnumValue<Direction.e>
 		  WEST;
 	}
 	
+	@Override
 	protected void addEntries()
 	{
 		put(e.NORTH, 1, "this is north");

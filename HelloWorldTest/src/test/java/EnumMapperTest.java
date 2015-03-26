@@ -22,7 +22,7 @@ public class EnumMapperTest {
 		//EnumValue.EnumBuilder<Direction.e>()
 			// Conversion from Enum to Integer and String
 		  
-		    Direction myDirection = new Direction(new EnumValue.EnumBuilder<Direction.e>().enumVal(Direction.e.NORTH));
+		    Direction myDirection = new Direction(new EnumValue.EnumBuilder<Direction.e>().enumVal(Direction.e.NORTH).intVal(2));
 			
 			assertEquals(myDirection.id(), new Integer(1));
 			assertEquals(myDirection.text(), "this is north");
@@ -84,7 +84,16 @@ public class EnumMapperTest {
 		    assertEquals(myDirection.id(), new Integer(0));
 			assertEquals(myDirection.text(), badString);	
 		 	assertNull(myDirection.value());
-
+	}
+	
+	@Test
+	public void GivenGoodWeekdayEnum()  {
+		    WeekdayUiNames myWeekday = new WeekdayUiNames(new EnumValue.EnumBuilder<Weekday>().enumVal(Weekday.MON));
+		
+			assertEquals(myWeekday.id(), new Integer(1));
+			assertEquals(myWeekday.text(), "Monday");
+			assertEquals(myWeekday.value(), Weekday.MON);
+			assertEquals(myWeekday.isValid(), true);
 		
 	}
 	
