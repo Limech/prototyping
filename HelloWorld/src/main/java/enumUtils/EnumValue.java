@@ -71,12 +71,12 @@ public abstract class EnumValue<Y extends Enum<Y>> {
 	public int id() { return intValue;	}
 	public String text() { return stringValue;	}
 	
-	public static class EnumBuilder<Y> {
-		private Y enumVal = null;
+	public static class EnumBuilder<X> {
+		private X enumVal = null;
 		private Integer enumInt = null;
 		private String enumString = null;
 		
-		public EnumBuilder(Y enumVal1) {
+		public EnumBuilder(X enumVal1) {
 			this.enumVal = enumVal1;
 		}
 		

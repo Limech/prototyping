@@ -1,13 +1,12 @@
 import static org.junit.Assert.*;
 
-import java.lang.reflect.InvocationTargetException;
-
 import org.junit.Before;
 import org.junit.Test;
 
 
+
+
 import enumUtils.EnumValue;
-import enumUtils.EnumValue.EnumBuilder;
 
 public class EnumMapperTest {
 		
@@ -22,7 +21,7 @@ public class EnumMapperTest {
 		//EnumValue.EnumBuilder<Direction.e>()
 			// Conversion from Enum to Integer and String
 		int id = 1;	
-		    Direction myDirection = new Direction(new EnumValue.EnumBuilder(id));
+		    Direction myDirection = new Direction(new EnumValue.EnumBuilder<Direction.e>(id));
 			
 			assertEquals(myDirection.id(), 1);
 			assertEquals(myDirection.text(), "this is north");
