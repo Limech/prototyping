@@ -6,7 +6,7 @@ import com.google.common.collect.HashBiMap;
 public abstract class EnumValue<Y extends Enum<Y>> {
 
 	private Y value;
-	private Integer intValue;
+	private int intValue;
 	private String stringValue;
 	private boolean isValid = false;
 	private final BiMap<Y, Integer> intToTypeMap = HashBiMap.create();
@@ -30,7 +30,7 @@ public abstract class EnumValue<Y extends Enum<Y>> {
 		}
 	}
 	
-	private void setInt(Integer id) {
+	private void setInt(int id) {
 	    this.value = fromInteger(id);
 		this.intValue = id;
 		if (this.value != null)
@@ -57,7 +57,7 @@ public abstract class EnumValue<Y extends Enum<Y>> {
 	
 	public Y value() { return value; }
 	
-	protected void put(Y value, Integer id, String text)
+	protected void put(Y value, int id, String text)
 	{
 		intToTypeMap.put(value, id);
 		stringToTypeMap.put(value, text);
@@ -65,10 +65,10 @@ public abstract class EnumValue<Y extends Enum<Y>> {
 	
 	public boolean isValid() { return isValid;}	
 	
-	private Y fromInteger(Integer id) { return intToTypeMap.inverse().get(id);   }
+	private Y fromInteger(int id) { return intToTypeMap.inverse().get(id);   }
 	private Y fromString(String text) { return stringToTypeMap.inverse().get(text); }
 	
-	public Integer id() { return intValue;	}
+	public int id() { return intValue;	}
 	public String text() { return stringValue;	}
 	
 	public static class EnumBuilder<Y> {
@@ -76,19 +76,16 @@ public abstract class EnumValue<Y extends Enum<Y>> {
 		private Integer enumInt = null;
 		private String enumString = null;
 		
-		public EnumBuilder<Y> enumVal(Y enumVal) {
-			this.enumVal = enumVal;
-			return this;
+		public EnumBuilder(Y enumVal1) {
+			this.enumVal = enumVal1;
 		}
 		
-		public EnumBuilder<Y> intVal(int enumInt) {
+		public EnumBuilder(int enumInt) {
 			this.enumInt = enumInt;
-			return this;
 		}
 		
-		public EnumBuilder<Y> stringVal(String enumString) {
+		public EnumBuilder(String enumString) {
 			this.enumString = enumString;
-			return this;
 		}
 	}
 

@@ -1,9 +1,5 @@
 import enumUtils.EnumValue;
-import enumUtils.IsEnumValue;
 
-
-
-@IsEnumValue
 class Direction extends EnumValue<Direction.e>
 {
 	Direction(EnumBuilder<Direction.e> builder) {
